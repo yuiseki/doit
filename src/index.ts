@@ -7,9 +7,10 @@ export const doit = async (instruction: string, autoRun?: boolean): Promise<void
     throw new Error('Command does not predicted');
   }
 
-  console.log('Predicted commands:');
-  console.log(commandsString);
-  console.log('-------------------');
+  console.debug('-------------------');
+  console.debug('All Predicted commands:');
+  console.debug(commandsString);
+  console.debug('-------------------');
 
   const commands = commandsString.split('```')[1].split('\n');
   for (const command of commands) {
@@ -23,3 +24,4 @@ export const doit = async (instruction: string, autoRun?: boolean): Promise<void
     console.log(result);
   }
 };
+

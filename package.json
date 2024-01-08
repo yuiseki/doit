@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc",
-    "test": "doit -y ファイルを表示して",
+    "test": "doit -y echo hoge",
     "lint": "tsc --noEmit"
   },
   "author": "yuiseki",

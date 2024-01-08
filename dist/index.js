@@ -8,9 +8,10 @@ const doit = async (instruction, autoRun) => {
     if (!commandsString) {
         throw new Error('Command does not predicted');
     }
-    console.log('Predicted commands:');
-    console.log(commandsString);
-    console.log('-------------------');
+    console.debug('-------------------');
+    console.debug('All Predicted commands:');
+    console.debug(commandsString);
+    console.debug('-------------------');
     const commands = commandsString.split('```')[1].split('\n');
     for (const command of commands) {
         if (!command) {
