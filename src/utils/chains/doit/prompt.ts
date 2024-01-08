@@ -36,6 +36,19 @@ cd my-vite-project && npm install`,
     input: 'add npm packages for react-map-gl',
     output: 'npm install react-map-gl maplibre-gl pmtiles',
   },
+  {
+    input: 'upgrade system node.js to latest version',
+    output: `curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt-get install nodejs -y`,
+  },
+  {
+    input: 'build this project',
+    output: 'npm run build',
+  },
+  {
+    input: 'install gdal by apt',
+    output: 'sudo apt-get install gdal-bin -y',
+  },
 ];
 
 const doItPromptPrefix = `Your name is DoIt, You are an interactive shell for the command line.
