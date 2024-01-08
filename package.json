@@ -7,9 +7,9 @@
     "doit": "bin/doit.js"
   },
   "scripts": {
-    "test": "jest",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc"
+    "build": "npm run clean && tsc",
+    "test": "doit -y ファイルを表示して"
   },
   "author": "yuiseki",
   "license": "WTFPL",
