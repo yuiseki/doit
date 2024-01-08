@@ -6,8 +6,11 @@ const runCommand_1 = require("./runCommand");
 const doit = async (instruction, autoRun) => {
     const commandsString = await (0, predictCommand_1.predictCommand)(instruction);
     if (!commandsString) {
-        throw new Error('Command is not predicted');
+        throw new Error('Command does not predicted');
     }
+    console.log('Predicted commands:');
+    console.log(commandsString);
+    console.log('-------------------');
     const commands = commandsString.split('```')[1].split('\n');
     for (const command of commands) {
         if (!command) {

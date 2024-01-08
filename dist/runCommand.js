@@ -18,7 +18,7 @@ const runCommand = async (command, autoRun) => {
             output: process.stdout,
         });
         const answer = await new Promise((resolve, reject) => {
-            rl.question(`Predicted command:
+            rl.question(`????? Predicted command:
 \`\`\`
 ${command}
 \`\`\`
@@ -33,7 +33,7 @@ Confirm to run above command (y/n): `, (answer) => {
         }
     }
     else {
-        console.log(`Executing predicted command:
+        console.log(`!!!!! Executing predicted command:
 \`\`\`
 ${command}
 \`\`\``);

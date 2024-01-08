@@ -4,8 +4,12 @@ import { runCommand } from './runCommand';
 export const doit = async (instruction: string, autoRun?: boolean): Promise<void> => {
   const commandsString = await predictCommand(instruction);
   if (!commandsString) {
-    throw new Error('Command is not predicted');
+    throw new Error('Command does not predicted');
   }
+
+  console.log('Predicted commands:');
+  console.log(commandsString);
+  console.log('-------------------');
 
   const commands = commandsString.split('```')[1].split('\n');
   for (const command of commands) {

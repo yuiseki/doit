@@ -14,7 +14,7 @@ export const runCommand = async (command: string, autoRun?: boolean): Promise<st
     });
     const answer = await new Promise<string>((resolve, reject) => {
       rl.question(
-        `Predicted command:
+        `????? Predicted command:
 \`\`\`
 ${command}
 \`\`\`
@@ -30,7 +30,7 @@ Confirm to run above command (y/n): `,
       throw new Error('Command is not confirmed');
     }
   } else {
-    console.log(`Executing predicted command:
+    console.log(`!!!!! Executing predicted command:
 \`\`\`
 ${command}
 \`\`\``);
@@ -42,3 +42,4 @@ ${command}
   }
   return `${stdout}`;
 };
+
