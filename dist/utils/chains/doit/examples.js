@@ -54,4 +54,8 @@ npm run test`,
         output: `git add .
 git commit -m 'hoge'`,
     },
+    {
+        input: 'git push',
+        output: 'git push',
+    },
 ];
