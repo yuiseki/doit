@@ -49,4 +49,9 @@ npm run test`,
         input: 'install gdal by apt',
         output: 'sudo apt-get install gdal-bin -y',
     },
+    {
+        input: 'commit all changes with comment hoge',
+        output: `git add .
+git commit -m 'hoge'`,
+    },
 ];
