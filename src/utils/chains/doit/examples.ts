@@ -56,7 +56,7 @@ git commit -m 'hoge'`,
   },
   {
     input: 'git push',
-    output: 'git push',
+    output: 'git push 2>&1',
   },
 ];
 
