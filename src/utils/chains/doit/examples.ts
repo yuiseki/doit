@@ -63,6 +63,11 @@ git commit -m 'hoge'`,
     output: 'git pull 2>&1',
   },
   {
+    input: 'git pull and npm ci',
+    output: `git pull 2>&1
+npm ci`,
+  },
+  {
     input: 'git push with comment hoge',
     output: `git add .
 git commit -m 'hoge'
