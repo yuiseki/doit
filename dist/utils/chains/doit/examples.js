@@ -16,11 +16,11 @@ exports.doItExampleList = [
     },
     {
         input: 'show hello world using docker',
-        output: `docker run hello-world`,
+        output: `docker run --rm hello-world`,
     },
     {
         input: 'show hello world using docker, Ubuntu 22.04',
-        output: "docker run ubuntu:22.04 /bin/echo 'Hello world'",
+        output: "docker run --rm ubuntu:22.04 /bin/echo 'Hello world'",
     },
     {
         input: 'initialize vite project with react and typescript template',
