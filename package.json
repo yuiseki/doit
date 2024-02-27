@@ -15,7 +15,7 @@
   "author": "yuiseki",
   "license": "WTFPL",
   "dependencies": {
-    "@langchain/community": "^0.0.32",
+    "@langchain/community": "^0.0.33",
     "@langchain/core": "^0.1.12",
     "@langchain/openai": "^0.0.15",
     "langchain": "^0.1.1",
