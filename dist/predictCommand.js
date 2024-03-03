@@ -2,27 +2,41 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.predictCommand = void 0;
 const openai_1 = require("@langchain/openai");
+const ollama_1 = require("@langchain/community/embeddings/ollama");
+const ollama_2 = require("@langchain/community/chat_models/ollama");
 const doit_1 = require("./utils/chains/doit");
 const predictCommand = async (instruction) => {
     let commands = undefined;
     let embeddings;
     let llm;
-    if (process.env.CLOUDFLARE_AI_GATEWAY) {
-        embeddings = new openai_1.OpenAIEmbeddings({
-            configuration: {
-                baseURL: process.env.CLOUDFLARE_AI_GATEWAY + '/openai',
-            },
+    if (process.env.OLLAMA_BASE_URL) {
+        embeddings = new ollama_1.OllamaEmbeddings({
+            baseUrl: process.env.OLLAMA_BASE_URL,
+            model: 'all-minilm:l6-v2',
         });
-        llm = new openai_1.ChatOpenAI({
-            configuration: {
-                baseURL: process.env.CLOUDFLARE_AI_GATEWAY + '/openai',
-            },
-            temperature: 0,
+        llm = new ollama_2.ChatOllama({
+            baseUrl: process.env.OLLAMA_BASE_URL,
+            model: 'codellama:7b-instruct',
         });
     }
     else {
-        embeddings = new openai_1.OpenAIEmbeddings();
-        llm = new openai_1.ChatOpenAI({ temperature: 0 });
+        if (process.env.CLOUDFLARE_AI_GATEWAY) {
+            embeddings = new openai_1.OpenAIEmbeddings({
+                configuration: {
+                    baseURL: process.env.CLOUDFLARE_AI_GATEWAY + '/openai',
+                },
+            });
+            llm = new openai_1.ChatOpenAI({
+                configuration: {
+                    baseURL: process.env.CLOUDFLARE_AI_GATEWAY + '/openai',
+                },
+                temperature: 0,
+            });
+        }
+        else {
+            embeddings = new openai_1.OpenAIEmbeddings();
+            llm = new openai_1.ChatOpenAI({ temperature: 0 });
+        }
     }
     const chain = await (0, doit_1.loadDoItChain)({ embeddings, llm });
     const result = await chain.call({ input: instruction });

@@ -10,6 +10,7 @@ You output the best unix command based on the input text.
 You will always output unix commands according to the following rules:
 - You MUST ALWAYS, without fail, output valid unix commands.
 - The commands MUST be enclosed by three backticks on new lines, denoting that it is a code block.
+- Examples are just as examples; be creative in your response, taking into account the intent of the Input as much as possible.
 
 ### Examples: ###`;
 
