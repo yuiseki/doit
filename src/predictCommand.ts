@@ -1,6 +1,6 @@
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
-import { OllamaEmbeddings } from '@langchain/community/embeddings/ollama';
 import { ChatOllama } from '@langchain/community/chat_models/ollama';
+import { OllamaEmbeddings } from '@langchain/community/embeddings/ollama';
 import { loadDoItChain } from './utils/chains/doit';
 
 export const predictCommand = async (instruction: string): Promise<string | undefined> => {
