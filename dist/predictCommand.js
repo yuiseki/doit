@@ -2,21 +2,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.predictCommand = void 0;
 const openai_1 = require("@langchain/openai");
-const ollama_1 = require("@langchain/community/embeddings/ollama");
-const ollama_2 = require("@langchain/community/chat_models/ollama");
+const ollama_1 = require("@langchain/community/chat_models/ollama");
+const ollama_2 = require("@langchain/community/embeddings/ollama");
 const doit_1 = require("./utils/chains/doit");
 const predictCommand = async (instruction) => {
     let commands = undefined;
     let embeddings;
     let llm;
     if (process.env.OLLAMA_BASE_URL) {
-        embeddings = new ollama_1.OllamaEmbeddings({
+        embeddings = new ollama_2.OllamaEmbeddings({
             baseUrl: process.env.OLLAMA_BASE_URL,
             model: 'all-minilm:l6-v2',
         });
-        llm = new ollama_2.ChatOllama({
+        llm = new ollama_1.ChatOllama({
             baseUrl: process.env.OLLAMA_BASE_URL,
-            model: 'codellama:7b-instruct',
+            model: 'deepseek-coder:1.3b-instruct',
         });
     }
     else {
