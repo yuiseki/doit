@@ -1,4 +1,14 @@
 {
-  "cSpell.words": ["autoremove", "codellama", "langchain", "llms", "minilm", "OLLAMA", "openai", "vectorstores"]
+  "cSpell.words": [
+    "autoremove",
+    "codellama",
+    "deepseek",
+    "langchain",
+    "llms",
+    "minilm",
+    "OLLAMA",
+    "openai",
+    "vectorstores"
+  ]
 }
 
