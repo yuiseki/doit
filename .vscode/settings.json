@@ -9,6 +9,7 @@
     "minilm",
     "OLLAMA",
     "openai",
+    "starcoder",
     "vectorstores"
   ]
 }

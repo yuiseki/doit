@@ -16,7 +16,7 @@ const predictCommand = async (instruction) => {
         });
         llm = new ollama_1.ChatOllama({
             baseUrl: process.env.OLLAMA_BASE_URL,
-            model: 'deepseek-coder:1.3b-instruct',
+            model: process.env.OLLAMA_MODEL,
         });
     }
     else {
