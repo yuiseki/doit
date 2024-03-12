@@ -1,3 +1,4 @@
+import process from 'node:process';
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
 import { ChatOllama } from '@langchain/community/chat_models/ollama';
 import { OllamaEmbeddings } from '@langchain/community/embeddings/ollama';
@@ -15,6 +16,8 @@ export const predictCommand = async (instruction: string): Promise<string | unde
     llm = new ChatOllama({
       baseUrl: process.env.OLLAMA_BASE_URL,
       model: process.env.OLLAMA_MODEL,
+      temperature: 0.0,
+      stop: ['Input:'],
     });
   } else {
     if (process.env.CLOUDFLARE_AI_GATEWAY) {
