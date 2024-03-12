@@ -14,7 +14,7 @@ export const predictCommand = async (instruction: string): Promise<string | unde
     });
     llm = new ChatOllama({
       baseUrl: process.env.OLLAMA_BASE_URL,
-      model: 'codellama:7b-instruct',
+      model: 'deepseek-coder:1.3b-instruct',
     });
   } else {
     if (process.env.CLOUDFLARE_AI_GATEWAY) {
