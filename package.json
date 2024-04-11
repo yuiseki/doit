@@ -17,7 +17,7 @@
   "dependencies": {
     "@langchain/community": "^0.0.47",
     "@langchain/core": "^0.1.12",
-    "@langchain/openai": "^0.0.27",
+    "@langchain/openai": "^0.0.28",
     "langchain": "^0.1.1",
     "yargs": "^17.7.2"
   },
